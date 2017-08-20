@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image3]: ./examples/before.jpg "Befor Grayscaling"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -48,23 +48,15 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ###Design and Test a Model Architecture
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. Additionally the data can be augmented, eg rotated. Implementations can be done eg with sklearn.preprocessing package. A good reference for scaling attempts and there effects can be found here: [preprocessing] (http://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html#sphx-glr-auto-examples-preprocessing-plot-all-scaling-py)
+####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. Additionally the data can be augmented, eg rotated. Good [samples code](https://github.com/aleju/imgaug). Implementations can be done eg with [sklearn.preprocessing package](http://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-scaler) just to name one framework. A good reference for scaling attempts and there effects can be found here: [preprocessing](http://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html#sphx-glr-auto-examples-preprocessing-plot-all-scaling-py)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale because it improves accuracy and reduces computing time. I used the standard function of tensorflow [rgb_to_grayscale](https://www.tensorflow.org/api_docs/python/tf/image/rgb_to_grayscale).  Second, I normalize the data for better convergence and backpropagation. Further reading you'll find [here](http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-16.html). 
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![alt text][image2]! [alt text][image3]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
+Further augmentation was not necessary to accomplish required 93% validation accuracy.
 
 The difference between the original data set and the augmented data set is the following ... 
 
