@@ -66,16 +66,15 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| Input = 32x32x1							| 
-| L1: Convolution 5x5     	| 1x1 stride, valid padding, output = 28x28x6 	|
-| RELU					|												|  
+| L1: Convolution 5x5     	| 1x1 stride, valid padding, output = 28x28x6, relu activation 	|
 | Max pooling	      	| 2x2 stride,  valid padding, Output = 14x14x6 				|
-| L2: Convolution 5x5	    | 1x1 stride, valid padding, output = 10x10x16.    	|
-| RELU					|												|  
+| L2: Convolution 5x5	    | 1x1 stride, valid padding, output = 10x10x16. relu activation   	|
 | Max pooling	      	| 2x2 stride,  valid padding, Output = 5x5x16 				|
-|	Flatten					|												| Output = 400
+|	Flatten					|					Output = 400  |
 | L3: Fully connected		| Output = 120, relu activation				|
 | L4 Fully connected		| Output = 84, relu activation, dropout |
 | Outupt: Fully connected				| Output = 43								|
+|:---------------------:|:---------------------------------------------:| 
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
