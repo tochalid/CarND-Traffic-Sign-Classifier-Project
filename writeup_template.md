@@ -74,18 +74,17 @@ My final model consisted of the following layers:
 | L3: Fully connected		| Output = 120, relu activation				|
 | L4 Fully connected		| Output = 84, relu activation, dropout |
 | Outupt: Fully connected				| Output = 43								|
-|:---------------------:|:---------------------------------------------:| 
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an an iterative approach. First checked underfitting with batchsize 2 which produced constant accuracy. Than switched to 128 which is overfitting. Accomplished some 0.89 validation accuracy. Decided to "early-terminate" in order to prevent overfitting, limited epochs to 10. Decreased sigma from 1 to 0.05 to reduce "oszillation" of accuracy. Learning kept to 0.001 due to overfitting less sensible.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+####4. Reused LeNet architecture which is suitable due to its application for character classification, thus well-known for its accuracy. In order to get the validation set accuracy to be at least 0.93 it has been sufficient to apply grayscale and normalization, than regularization and dropout to minimize impact of overfitting.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.99290?
+* validation set accuracy of 0.93832? 
+* test set accuracy of 0.9220?
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
