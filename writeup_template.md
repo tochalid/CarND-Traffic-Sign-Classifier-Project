@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/before.jpg "Befor Grayscaling"
+[image3]: ./examples/before.png "Befor Grayscaling"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -54,12 +54,10 @@ As a first step, I decided to convert the images to grayscale because it improve
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]! [alt text][image3]
+![alt text][image2]
+![alt text][image3]
 
 Further augmentation was not necessary to accomplish required 93% validation accuracy.
-
-The difference between the original data set and the augmented data set is the following ... 
-
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -67,17 +65,17 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
-
+| Input         		| Input = 32x32x1							| 
+| L1: Convolution 5x5     	| 1x1 stride, valid padding, output = 28x28x6 	|
+| RELU					|												|  
+| Max pooling	      	| 2x2 stride,  valid padding, Output = 14x14x6 				|
+| L2: Convolution 5x5	    | 1x1 stride, valid padding, output = 10x10x16.    	|
+| RELU					|												|  
+| Max pooling	      	| 2x2 stride,  valid padding, Output = 5x5x16 				|
+|	Flatten					|												| Output = 400
+| L3: Fully connected		| Output = 120, relu activation				|
+| L4 Fully connected		| Output = 84, relu activation, dropout |
+| Outupt: Fully connected				| Output = 43								|
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
