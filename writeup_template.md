@@ -95,27 +95,24 @@ If a well known architecture was chosen:
  
 ###Test a Model on New Images
 
-####1. Five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+####1. Five German traffic signs found on the web and provide them in the report. 
 
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+####2. The prediction seems not sufficient, thus the model statistics report high accuracy. I find it obviouse that probabilities have very small values around 0 ranging from e-1 to e-2. However, the small values could explain that the prediction is vage. Comparing probabilities from new signs and from training and validation sets, indicates similar scale or worth (mean very small), which would points me for double-checking the preprocessing mechanisms. Right now I cannot preclude a programming error, but couldnt find any yet. 
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
+| id4_speed_limit_70  		| other   									| 
+| id14_stop     			| other 										|
+| id3_speed_limit_60					| other											|
+| id25_road_work      		| other					 				|
+| id12_priority_road		| other      							|
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
