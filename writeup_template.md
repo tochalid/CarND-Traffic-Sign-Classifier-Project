@@ -54,8 +54,7 @@ As a first step, I decided to convert the images to grayscale because it improve
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
-![alt text][image3]
+![alt text][image3] ![alt text][image2]
 
 Further augmentation was not necessary to accomplish required 93% validation accuracy.
 
