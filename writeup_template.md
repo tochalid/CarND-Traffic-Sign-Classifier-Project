@@ -15,11 +15,11 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/before.jpg "Before Grayscaling"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./ts_downloads/id4_speed_limit_70.jpg "Traffic Sign 1"
+[image5]: ./ts_downloads/id14_stop.jpg "Traffic Sign 2"
+[image6]: ./ts_downloads/id3_speed_limit_60.jpg "Traffic Sign 3"
+[image7]: ./ts_downloads/id25_road_work.jpg "Traffic Sign 4"
+[image8]: ./ts_downloads/id12_priority_road.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -76,7 +76,7 @@ My final model consisted of the following layers:
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an an iterative approach. First checked underfitting with batchsize 2 which produced constant accuracy. Than switched to 128 which is overfitting. Accomplished some 0.89 validation accuracy. Decided to "early-terminate" in order to prevent overfitting, limited epochs to 10. Decreased sigma from 1 to 0.05 to reduce "oszillation" of accuracy. Learning kept to 0.001 due to overfitting less sensible.
+To train the model, I used an an iterative approach for the hyperparameters. First checked underfitting with batchsize 2 which produced constant accuracy. Than switched to 128 which is overfitting. Accomplished some 0.89 validation accuracy. Decided to "early-terminate" in order to prevent overfitting, limited epochs to 10. Decreased sigma from 1 to 0.05 to reduce "oszillation" of accuracy. Learning kept to 0.001 due to overfitting less sensible.
 
 ####4. Reused LeNet architecture which is suitable due to its application for character classification, thus well-known for its accuracy. In order to get the validation set accuracy to be at least 0.93 it has been sufficient to apply grayscale and normalization, than regularization and dropout to minimize impact of overfitting.
 
@@ -86,21 +86,16 @@ My final model results were:
 * test set accuracy of 0.9220?
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* The major problem with the initial architecture is overfitting, which can be addressed in multiple ways, but 
+* A design choise would be to squeeze further the spacial dimension using deeper convolutions.
 
 If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* What architecture was chosen? LeNet
+* Why did you believe it would be relevant to the traffic sign application? Well know architecture that has been fine-tuned (even if i didn't change any structure here) for many applications by the community. Thus, a good starting point, that need to be further modified to additionally increase accuracy and improve prediction.  
  
-
 ###Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+####1. Five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
