@@ -102,6 +102,14 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
+
+I choosed these images because of the brightness and contrast qualities. 
+- The 1st image might be easier to classify because of the brightness and contrast. Brightness augmentation can have a very positive impact to accuracy, good insight can be found [classification using brightness augmentation](https://medium.com/@vivek.yadav/improved-performance-of-deep-learning-neural-network-models-on-traffic-sign-classification-using-6355346da2dc). The impact of the distortion of the sign seems minimal and shouldnt have a big effect in this case.
+- The 2nd image might be easier to classify because of the contrast between sign and background even if diffuce (blurry) background. Contrast can have effect on misclassification. See [Understanding quality effects](https://arxiv.org/pdf/1604.04004.pdf).
+- The 3rd image might be more difficult to classify because of reduced brightness and lower contrast.
+- The 4th image might be more difficult to classify because of the changing illumination locally impacting brightness and contrast maybe causing first layers to detect unusual lines and edges.  
+- The 5th image might be easier to classify because contrast and brightness seem homogenious while the yellow-ish color quality is filtered using grayscale.
+
 ####2. The prediction seems not sufficient, thus the model statistics report high accuracy. I find it obviouse that probabilities have very small values around 0 ranging from e-1 to e-2. However, the small values could explain that the prediction is vage. Comparing probabilities from new signs and from training and validation sets, indicates similar scale or worth (mean very small), which would points me for double-checking the preprocessing mechanisms. Right now I cannot preclude a programming error, but couldnt find any yet. It could be a problem with numerical stability.
 
 Here are the results of the prediction: (instable, eg Predicted Labels:  [31 29  7 20 33])
