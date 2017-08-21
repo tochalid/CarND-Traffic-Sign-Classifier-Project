@@ -102,7 +102,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-####2. The prediction seems not sufficient, thus the model statistics report high accuracy. I find it obviouse that probabilities have very small values around 0 ranging from e-1 to e-2. However, the small values could explain that the prediction is vage. Comparing probabilities from new signs and from training and validation sets, indicates similar scale or worth (mean very small), which would points me for double-checking the preprocessing mechanisms. Right now I cannot preclude a programming error, but couldnt find any yet. 
+####2. The prediction seems not sufficient, thus the model statistics report high accuracy. I find it obviouse that probabilities have very small values around 0 ranging from e-1 to e-2. However, the small values could explain that the prediction is vage. Comparing probabilities from new signs and from training and validation sets, indicates similar scale or worth (mean very small), which would points me for double-checking the preprocessing mechanisms. Right now I cannot preclude a programming error, but couldnt find any yet. It could be a problem with numerical stability.
 
 Here are the results of the prediction:
 
@@ -116,24 +116,24 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+####3. Meaningful certainty cannot be determined at this stage
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the section with header "Analyze Performance" of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+The model is relatively unsure. See top 5.
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| [ 0.08945462,  0.06818956,  0.06765534,  0.05835355,  0.05278334]     | [38, 34, 36,  3, 14]  				| 
+| [ 0.06100992,  0.04847522,  0.04079581,  0.03980098,  0.03709331]     | [38,  3, 17, 36, 24] 					|
+| [ 0.07438038,  0.05912182,  0.04951916,  0.04601262,  0.03545175]					| [38, 34, 36,  3, 22]						|
+| [ 0.08282059,  0.06962395,  0.05189766,  0.04466608,  0.04315159]	   	| [38, 34,  3, 14, 22]						|
+| [ 0.0701469 ,  0.06590696,  0.05478808,  0.03873353,  0.03673509]			  | [38,  3, 34, 22, 14]						|
 
 
-For the second image ... 
+
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-
+not yet available
