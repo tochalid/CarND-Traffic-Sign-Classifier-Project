@@ -104,7 +104,7 @@ Here are five German traffic signs that I found on the web:
 
 ####2. The prediction seems not sufficient, thus the model statistics report high accuracy. I find it obviouse that probabilities have very small values around 0 ranging from e-1 to e-2. However, the small values could explain that the prediction is vage. Comparing probabilities from new signs and from training and validation sets, indicates similar scale or worth (mean very small), which would points me for double-checking the preprocessing mechanisms. Right now I cannot preclude a programming error, but couldnt find any yet. It could be a problem with numerical stability.
 
-Here are the results of the prediction:
+Here are the results of the prediction: (instable, eg Predicted Labels:  [31 29  7 20 33])
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -131,6 +131,53 @@ The model is relatively unsure. See top 5.
 | [ 0.0701469 ,  0.06590696,  0.05478808,  0.03873353,  0.03673509]			  | [38,  3, 34, 22, 14]						|
 
 
+
+Expected Lables [ 4 14  3 25 12]
+
+['ClassId', 'SignName']
+['0', 'Speed limit (20km/h)']
+['1', 'Speed limit (30km/h)']
+['2', 'Speed limit (50km/h)']
+['3', 'Speed limit (60km/h)']
+['4', 'Speed limit (70km/h)']
+['5', 'Speed limit (80km/h)']
+['6', 'End of speed limit (80km/h)']
+['7', 'Speed limit (100km/h)']
+['8', 'Speed limit (120km/h)']
+['9', 'No passing']
+['10', 'No passing for vehicles over 3.5 metric tons']
+['11', 'Right-of-way at the next intersection']
+['12', 'Priority road']
+['13', 'Yield']
+['14', 'Stop']
+['15', 'No vehicles']
+['16', 'Vehicles over 3.5 metric tons prohibited']
+['17', 'No entry']
+['18', 'General caution']
+['19', 'Dangerous curve to the left']
+['20', 'Dangerous curve to the right']
+['21', 'Double curve']
+['22', 'Bumpy road']
+['23', 'Slippery road']
+['24', 'Road narrows on the right']
+['25', 'Road work']
+['26', 'Traffic signals']
+['27', 'Pedestrians']
+['28', 'Children crossing']
+['29', 'Bicycles crossing']
+['30', 'Beware of ice/snow']
+['31', 'Wild animals crossing']
+['32', 'End of all speed and passing limits']
+['33', 'Turn right ahead']
+['34', 'Turn left ahead']
+['35', 'Ahead only']
+['36', 'Go straight or right']
+['37', 'Go straight or left']
+['38', 'Keep right']
+['39', 'Keep left']
+['40', 'Roundabout mandatory']
+['41', 'End of no passing']
+['42', 'End of no passing by vehicles over 3.5 metric tons']
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
